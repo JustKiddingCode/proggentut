@@ -1,0 +1,167 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\title[Programmieren Tutorium]{1. Programmieren Tutorium:\\ Erste Schritte in Java}
+\subtitle{Hello World / Datentypen}
+\author{Konstantin Zangerle}
+
+\usepackage{listings}
+\usepackage{color}
+\usetheme{Rochester}
+\usepackage{biolinum}
+
+\begin{document}
+
+
+%title page
+\begin{frame}
+\titlepage
+\end{frame}
+
+%table of contents
+\begin{frame}{Gliederung}
+\tableofcontents
+\end{frame}
+
+\section{Vorstellung}
+\subsection{Ich über mich}
+\begin{frame}{Eigene Vorstellung}
+\begin{itemize}
+\item Konstantin Zangerle
+\item 5. Semester Bachelor Informatik
+\item info@konstantinzangerle.de
+\item \dots
+\end{itemize}
+\end{frame}
+
+\subsection{Freizeit}
+\begin{frame}{Freizeitgedöns}
+\begin{itemize}
+\item öfter mal in der Fachschaft
+\item steh auf Kaffee und Musik
+\begin{itemize}
+ \item E-Bass
+ \item Ukulele
+ \item Querflöte
+ \item Gesang
+\end{itemize}
+
+\item \dots
+\end{itemize}
+\end{frame}
+
+\subsection{Ihr seid an der Reihe!}
+\begin{frame}{Eure Vorstellung}
+\begin{itemize}
+\item Name?
+\item Studiengang? Informatik / InWi / \dots
+\item Programmiererfahrung (mit C/Java/Python)
+\item \dots
+\end{itemize}
+\end{frame}
+
+
+\section{Organisatorisches}
+\begin{frame}{ToDo Liste für euch!}
+\begin{alertblock}{Gleich erledigen!}
+\begin{itemize}
+ \item Im ILIAS anmelden
+ \item Im Praktomaten anmelden
+ \item Einverständniserklärung im Briefkasten einwerfen
+ \item VPN einrichten
+ \item Java installieren
+ \item Checkstyle installieren
+ \item GIT installieren
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Ablauf des Semesters}
+\begin{alertblock}{}
+\begin{itemize}
+ \item Alle zwei Wochen Übungsblatt abgeben
+ \item Am Ende mindestens 50\% der Punkte (wahrscheinlich 60P.)
+ \item Im März 2 Abschlussaufgaben
+  \begin{itemize}
+        \item Nur die zählen zur Note!
+        \item 2 Wochen versetzt
+        \item 4 Wochen Bearbeitungszeit
+       \end{itemize}
+  \pause
+  \item Alle Angaben wie immer ohne Gewähr
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+
+\section{Java}
+\begin{frame}
+ \begin{exampleblock}{Snelting}
+  Java ist hier der Perverse!
+ \end{exampleblock}
+
+\end{frame}
+
+
+\section{An die Arbeit}
+\begin{frame}[fragile]{Erstes Programm}
+\begin{exampleblock}{Hello World in Java}
+\begin{lstlisting}[language=java]
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\subsection{Interaktiver Teil}
+\begin{frame}{Ihr passt an!}
+\begin{exampleblock}{}
+\begin{itemize}
+\item Anderer Text
+\pause
+\item Text in eine Variable packen
+\pause
+\item Variablen? 
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\subsubsection{Übersicht Variablen}
+\begin{frame}{Grundlegende Datentypen}
+\begin{exampleblock}{Einmal zuordnen bitte!}
+\begin{itemize}
+\item int
+\item String
+\item double
+\item float
+\item long
+\item char
+\item \dots
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\subsection{Kleine Programmieraufgabe}
+\begin{frame}{Ihr programmiert!}
+\begin{exampleblock}{}
+\begin{itemize}
+\item Zwei Variablen (a,b)
+\item Ausgabe:
+\begin{itemize}
+\item 1. Summand: a
+\item 2. Summand: b
+\item Summe: a+b
+\end{itemize}
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+ \includegraphics[scale=0.3]{pics/02_tutorslife} 
+\end{frame}
+
+
+\end{document}
