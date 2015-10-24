@@ -1,2 +1,2 @@
 # proggentut
-Folien für mein Algorithmentutorium
+Folien für mein Programmierentutorium
