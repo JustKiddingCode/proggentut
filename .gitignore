@@ -1,0 +1,9 @@
+.gitignore
+*.tex.backup
+*.toc
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.vrb
