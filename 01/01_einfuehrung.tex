@@ -5,6 +5,7 @@
 \subtitle{Hello World / Datentypen}
 \author{Konstantin Zangerle}
 
+\usepackage[noend]{algpseudocode}
 \usepackage{listings}
 \usepackage{color}
 \usetheme{Rochester}
@@ -187,6 +188,26 @@ In welcher Datei muss man das Speichern?
 Zeichnet graphisch einen möglichen objektorientierten Ansatz!
  \end{frame}
 
+\begin{frame}[fragile]{GGT}
+Den größten Gemeinsamen Teiler kann man leicht mittels folgendem Algorithmus bestimmen.
+
+\begin{algorithmic}
+ \If{$a = 0$}
+   \State \Return b
+ \EndIf
+ \While{$b \neq 0$}
+   \If{$a > b$}
+     \State $a \gets a - b$
+   \Else
+     \State $b \gets b - a$
+   \EndIf
+ \EndWhile
+ \State \Return a
+\end{algorithmic}
+Aufgabe: Implementiert den Algorithmus
+\end{frame}
+ 
+ 
 \begin{frame}{Ende! Fragen?}
  \includegraphics[scale=0.3]{../pics/02_tutorslife} 
 \end{frame}
