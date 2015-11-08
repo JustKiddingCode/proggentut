@@ -347,8 +347,7 @@ Will man den Zugriff auf die Attribute einer Klasse einschränken will aber trot
   private double temperatur; // das zu verraten schadet nichts?
   private double uranmenge; //veraendern 
   private boolean verraten = true;
-  public void setTemperatur(double temp) { //erlaube Aenderung der 
-  //Temperatur
+  public void setTemperatur(double temp) { //erlaube Aenderung der Temperatur
     if (temp < 200 && temp > 0) { //aber nur in Maszen
       temperatur = temp;
     }
@@ -409,7 +408,7 @@ public class Ueberladen {
 
 
 \begin{frame}[fragile]{Konkrete for – macht ihr Selbst!}
- \begin{lstlisting}
+ \begin{lstlisting}[language=java]
  System.out.println("Einmal");
  int i = 10;
  while(i > 0) {
@@ -421,7 +420,7 @@ public class Ueberladen {
 \end{frame}
 
 \begin{frame}[fragile]{Sollte aber ungefähr so aussehen!}
- \begin{lstlisting}
+ \begin{lstlisting}[language=java]
  System.out.println("Einmal");
  for (int i = 10; i > 0; i--) {
    System.out.println("Und nocheinmal...");
