@@ -275,7 +275,7 @@ Wir unterscheiden:
  \textbf{Lösung: } ENUM!
 \end{frame}
 \begin{frame}[fragile]{enum - Beispiel}
- \begin{lstlisting}
+ \begin{lstlisting}[language=java]
   public enum Months {
     JAN, FEB, MAR, APR, MAI, JUN, JUL, SEP, OCT, NOV, DEZ
   }
@@ -317,7 +317,7 @@ Wir unterscheiden:
 \section{Methoden}
 \subsection{Methodensignatur}
 \begin{frame}[fragile]{Methoden}
- \begin{lstlisting}
+ \begin{lstlisting}[language=java]
   public int convertToFahrenheit(int celsius) {
     return (celsius * 9) / 5 + 32;
   }
@@ -342,7 +342,7 @@ Antwort:
 \subsection{getter und setter}
 \begin{frame}[fragile]{getter und setter}
 Will man den Zugriff auf die Attribute einer Klasse einschränken will aber trotzdem das Auslesen ermöglichen so bietet man den Zugriff über eine Getter-Methode an.
-\begin{lstlisting}
+\begin{lstlisting}[language=java]
  public class Atomwaffe {
   private double temperatur; // das zu verraten schadet nichts?
   private double uranmenge; //veraendern 
@@ -373,7 +373,7 @@ Will man den Zugriff auf die Attribute einer Klasse einschränken will aber trot
 \end{frame}
 
 \begin{frame}[fragile]{Überladen – noch ein Beispiel}
- \begin{lstlisting}
+ \begin{lstlisting}[language=java]
 public class Ueberladen {
     public int max(int i1, int i2) { 
         return (i1 > i2) ? i1 : i2; 
