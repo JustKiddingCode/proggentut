@@ -1,0 +1,233 @@
+\documentclass[18pt]{beamer}
+%% SLIDE FORMAT
+\usepackage[utf8]{inputenc}
+\usetheme{Rochester}
+
+\title[Programmieren Tutorium]{3. Programmieren Tutorium:\\ Von Konstanten und Referenzen}
+\subtitle{Datentypen / Referenzen / Datentypen und Schinken}
+\author{Konstantin Zangerle \\ info@konstantinzangerle.de}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+
+\begin{document}
+
+% change the following line to "ngerman" for German style date and logos
+\selectlanguage{ngerman}
+
+%title page
+\begin{frame}
+\titlepage
+\end{frame}
+
+%table of contents
+\begin{frame}{Gliederung}
+\tableofcontents
+\end{frame}
+
+
+
+
+%% Konstantendeklaration und null
+\section{Konstantendeklaration und null}
+\begin{frame}{Konstantendeklaration und null}
+\begin{itemize}
+ \item final: Der Wert dieser Variable darf sich nicht ändern.
+ \item null: Kein Objekt!
+\end{itemize}
+\end{frame}
+
+
+
+\section{Parameter}
+\begin{frame}{Parameter}
+Ein Parameter ist eine besondere Form von Variablen
+Wir unterscheiden:
+\begin{itemize}
+ \item \textbf{Formaler Parameter}: \pause \\
+  Der Name, der bei der Deklaration der Konstruktor Methode gewählt wurde.
+  
+ \item \textbf{Aktueller Parameter}:\pause \\
+ Der Wert, der beim Aufruf für den formalen Parameter eingesetzt wird.
+\end{itemize}
+\end{frame}
+
+
+\section{Konstruktoren}
+\begin{frame}{Konstruktoren}
+ Haben wir letzte Woche nocheinmal behandelt.
+ Deswegen heute nur eine Aufgabe dazu!
+ 
+ \textbf{Aufgabe:} Modelliere eine Klasse Quadrat, die als Konstruktoren die obere linke Ecke und die untere rechte Ecke annimmt.
+ Ebenso soll es auch einen Konstruktor geben, der alle 4 Eckpunkte annimmt und auf Korrektheit überprüft, sowie einen Konstruktor
+ der die obere linke Ecke sowie zusätzlich eine Länge annimmt.
+\end{frame}
+
+\section{enum}
+\begin{frame}{enum}
+ Oft will man in einem Programm eine Auswahl bereitstellen. Es soll also eine Klasse geben,
+ die es erlaubt einen begrenzten Wertebereich anzugeben.
+ Bsp.: Für ein Programm, dass mit Monaten arbeitet ist es blöd, integer als Parameter zu verwenden. Das erfordert immer eine
+ zusätzliche Überprüfung! \\
+ \pause
+ \textbf{Lösung: } ENUM!
+\end{frame}
+\begin{frame}[fragile]{enum - Beispiel}
+ \begin{lstlisting}[language=java]
+  public enum Months {
+    JAN, FEB, MAR, APR, MAI, JUN, JUL, SEP, OCT, NOV, DEZ
+  }
+ \end{lstlisting}
+\end{frame}
+
+\begin{frame}{enum - Aufgabe}
+ Sicherlich bekannt sind die Lieder: 
+ \begin{itemize}
+  \item Manic Monday
+  \item Ruby Tuesday
+  \item Wednesday's Song
+  \item Thursday
+  \item Friday I'm in love
+  \item Saturday night fever
+  \item Sunday Morning
+ \end{itemize}
+ Schreibt ein Programm, dass per Eingabe eines enum Typs mir den richtigen Song ausgiebt. 
+ 
+ (Bonuspunkte für den richtigen Interpreten)
+\end{frame}
+
+\begin{frame}{enum - Aufgabe}
+ Sicherlich bekannt sind die Lieder: 
+ \begin{itemize}
+  \item Manic Monday – Bangles
+  \item Ruby Tuesday – Rolling Stones
+  \item Wednesday's Song – John Frusciante
+  \item Thursday – Pet Shop Boys
+  \item Friday I'm in love – The Cure
+  \item Saturday night fever – Bee Gees
+  \item Sunday Morning – No Doubt
+ \end{itemize}
+ Schreibt ein Programm, dass per Eingabe eines enum Typs mir den richtigen Song ausgiebt. 
+ 
+ (Bonuspunkte für den richtigen Interpreten)
+\end{frame}
+
+\section{Methoden}
+\subsection{Methodensignatur}
+\begin{frame}[fragile]{Methoden}
+ \begin{lstlisting}[language=java]
+  public int convertToFahrenheit(int celsius) {
+    return (celsius * 9) / 5 + 32;
+  }
+ \end{lstlisting}
+ ist Methode der Klasse Temperatur. Die Methodensignatur ist der Fingerabdruck der Methode für den Compiler.
+ 
+ Frage: Aus was besteht dieser Fingerabdruck?
+\end{frame}
+
+\begin{frame}{Methodensignatur}
+Antwort:
+ \begin{itemize}
+  \item Namen der Methode
+  \item Anzahl der Parameter
+  \item Reihenfolge der Parameter
+  \item Typen der Parameter
+  \item Rückgabetyp der Methode
+ \end{itemize}
+
+\end{frame}
+
+\subsection{Überladen von Methoden}
+\begin{frame}{Überladen von Methoden}
+ Methoden können den gleichen Namen haben – solange die Signatur unterschiedlich ist, weiß der Compiler/Interpreter was er nehmen soll.
+ Ihr habt heute schon Methoden überladen!? \\ \pause
+ \textbf{Genau! Den Konstruktor}
+\end{frame}
+
+\begin{frame}[fragile]{Überladen – noch ein Beispiel}
+ \begin{lstlisting}[language=java]
+public class Ueberladen {
+    public int max(int i1, int i2) { 
+        return (i1 > i2) ? i1 : i2; 
+    }
+   
+    public float max(float f1, float f2) { 
+        return (f1 > f2) ? f1 : f2; 
+    }
+    
+    public double max(double d1, double d2) { 
+        return (d1 > d2) ? d1 : d2; 
+    }
+} 
+ \end{lstlisting}
+\end{frame}
+
+\section{static – Was ist das?}
+\begin{frame}{static was ist das?}
+ static zeigt an dass etwas – Methode oder Attribut – nicht zum Objekt sondern zur Klasse, d.h. für alle Instanzen der Klasse genau einmal existiert.
+ Was bedeutet das für uns?
+\end{frame}
+
+\begin{frame}{static – die Auswirkungen}
+\begin{itemize}
+ \item eine static Funktion kann keine nicht-static Attribute benutzen
+ \item eine static Funktion kann keine nicht-static Funktion benutzen
+ \item Umgekehrt funktioniert aber beides!
+ \item Kann für Konstanten verwendet werden
+\end{itemize}
+ 
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Konkrete for – macht ihr Selbst!}
+ \begin{lstlisting}[language=java]
+ System.out.println("Einmal");
+ int i = 10;
+ while(i > 0) {
+  System.out.println("Und nocheinmal...");
+  i--;
+ }
+ \end{lstlisting}
+ Aufgabe: Wandle obige WHILE-Schleife in eine FOR-Schleife um!
+\end{frame}
+
+\begin{frame}[fragile]{Sollte aber ungefähr so aussehen!}
+ \begin{lstlisting}[language=java]
+ System.out.println("Einmal");
+ for (int i = 10; i > 0; i--) {
+   System.out.println("Und nocheinmal...");
+ }
+ \end{lstlisting}
+\end{frame}
+%%%% Ab hier muss nur noch das Bild gewechselt werden...
+\section{Fragen zum Übungsblatt?}
+\begin{frame}{Fragen?}
+\end{frame}
+
+
+
+%Lacher zum Schluss
+\begin{frame}
+ \includegraphics[scale=1.5]{../pics/03_goodcomments}
+ 
+ \tiny{Quelle: Google Bildersuche}
+\end{frame}
+
+\end{document}
