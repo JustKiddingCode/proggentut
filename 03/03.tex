@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usetheme{Rochester}
 
-\title[Programmieren Tutorium]{3. Programmieren Tutorium:\\ Von Konstanten und Referenzen}
+\title[Programmieren Tutorium]{3. Programmieren Tutorium:\\ Noch mehr Schinken}
 \subtitle{Datentypen / Referenzen / Datentypen und Schinken}
 \author{Konstantin Zangerle \\ info@konstantinzangerle.de}
 
@@ -128,6 +128,25 @@ Wir unterscheiden:
  (Bonuspunkte für den richtigen Interpreten)
 \end{frame}
 
+\subsection{enum}
+\begin{frame}[fragile]{enum}
+Manche enum Werte sind fest... \pause
+Das erleichtert einiges!
+ \begin{lstlisting}[language=java]
+enum Weekday {
+  private String song;
+  MON("i dont like mondays"), TUE("Ruby Tuesday");
+  
+  Weekday(String titel) {
+    this.song = titel;
+  }
+  String getTitel() {
+    return this.song;
+  }
+}
+ \end{lstlisting}
+\end{frame}
+
 \section{Methoden}
 \subsection{Methodensignatur}
 \begin{frame}[fragile]{Methoden}
@@ -216,6 +235,31 @@ public class Ueberladen {
  }
  \end{lstlisting}
 \end{frame}
+
+\begin{frame}{enum - Aufgabe}
+Beim Skat gibt es die Karten 7, 8, 9, 10, Bube, Dame, König, ASS.
+Vereinfacht habe nun jede Karte die gleiche Farbe. Gebe ein ENUM-Modell an,
+die sowohl die Punktzahlen eines Stichs berechnen kann, als auch die höchste
+Karte in einem Stich.
+Punkte: 
+\begin{itemize}
+ \item 7,8,9 $\rightarrow$ 0; 
+ \item 10 $\rightarrow$ 10, 
+ \item Ass $\rightarrow$ 11, 
+ \item Bube $\rightarrow$ 2, 
+ \item Dame $\rightarrow$ 3, 
+ \item König $\rightarrow$ 4
+\end{itemize}
+
+Reihenfolge: 7,8,9, Dame, König, 10, Ass, Bube
+\end{frame}
+
+\begin{frame}{Funktionswertetabelle}
+ Für manche Aufgaben kann eine Funktionstabelle sehr nützlich sein.
+ Implementieren sie für eine gegebene Funktion $f : \mathbb{Z} \to \mathbb{R}$
+ eine Funktion plot(int from, int to, int step), die eine Funktionstabelle erstellt.
+\end{frame}
+
 %%%% Ab hier muss nur noch das Bild gewechselt werden...
 \section{Fragen zum Übungsblatt?}
 \begin{frame}{Fragen?}
@@ -225,7 +269,7 @@ public class Ueberladen {
 
 %Lacher zum Schluss
 \begin{frame}
- \includegraphics[scale=1.5]{../pics/03_goodcomments}
+ \includegraphics[scale=0.35]{../pics/simplesaycheese}
  
  \tiny{Quelle: Google Bildersuche}
 \end{frame}
