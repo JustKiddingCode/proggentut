@@ -1,0 +1,172 @@
+\documentclass[18pt]{beamer}
+%% SLIDE FORMAT
+\usepackage[utf8]{inputenc}
+\usepackage{algpseudocode}
+
+\title[Programmieren Tutorium]{4. Programmieren Tutorium:\\ Übungen}
+\subtitle{Kontrolle ist gut – Kontrolle ist besser}
+\author{Konstantin Zangerle \\ info@konstantinzangerle.de}
+\date{\today}
+
+\usepackage{listings}
+\usepackage{color}
+
+\begin{document}
+
+% change the following line to "ngerman" for German style date and logos
+\selectlanguage{ngerman}
+
+%title page
+\begin{frame}
+\titlepage
+\end{frame}
+
+%table of contents
+\begin{frame}{Gliederung}
+\tableofcontents
+\end{frame}
+
+\section{Übungsaufgaben}
+\subsection{Binäre Suche}
+\begin{frame}{Aufgabe: Binäre Suche}
+Ich denke mir eine Zahl zwischen Eins und Hundert. Schreibe ein Programm, 
+dass für jede mögliche Zahl $n \in \mathbb{N}, n <101$ n mit möglichst 
+wenigen Fragen der Form ``Kleiner, Größer, Gleich [1-3]'' errät.
+\end{frame}
+
+
+
+\section{Arrays} % 4-7
+\begin{frame}[fragile]{Arrays}
+\begin{lstlisting}[language=java]
+/* returns max {a,b,c,d} */
+public static int max4(int a, int b, int c, int d) { } 
+
+/* returns max {a,b,c,d,e} */
+public static int max5(int a, int b, int c, int d, int e) { } 
+
+
+/* any way to do this better? */
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Arrays}
+ \begin{lstlisting}[language=java]
+    public static int max(int[] a) {
+        int max = Integer.MIN_VALUE;
+        for (int k : a) {
+            if (k >= max) {
+                max = k;
+            }
+        }
+        return max;
+    }
+ \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Arrays – Was muss man beachten}
+ \begin{itemize}
+  \item Arrays sollen Daten zusammenfassen, die zusammengehören
+  \item Auch wenns geht, so ein Array ist blöd [Handelsklasse, Gewicht, Volumen, Gewicht]
+  \item Eignen sich für feste Datengrößen (5x int; double-Feld 5x3; ...)
+ \end{itemize}
+
+\end{frame}
+
+
+\section{Typkonvertierung}
+\begin{frame}[fragile]{Typkonvertierung – funktioniert häufig}
+Bei Basisdatentypen den gewünschten Datentyp in Klammern schreiben.
+ \begin{lstlisting}
+  int a = (int) 5.3;
+  System.out.println(a);
+ \end{lstlisting}
+ \pause
+Java übernimmt das umwandeln. Manchmal muss man noch nichteinmal das machen.
+ \begin{lstlisting}
+  double a = 5;
+  System.out.println(a);
+ \end{lstlisting}
+\end{frame}
+
+\section{Datenkapselung}
+\begin{frame}{Datenkapselung}
+ Eines der grundlegenden Prinzipen der OOP.
+ Daten sollen dahin, wo sie hingehören (und nur da!).
+  Wenn möglich, geschieht dies nach dem \textbf{Geheimnisprinzip}. Jedes
+  Objekt, jede Klasse ändert nur die Dinge, die ihr auch selbst gehören.
+\end{frame}
+
+\subsection{Sichtbarkeit}
+\begin{frame}[fragile]{Sichtbarkeit}
+ Um Programmierer dazu zu zwingen, die Datenkapselung einzuhalten,
+ benutzen wir Sichtbarkeiten. Ist ein Attribut oder eine Methode als 
+ \verb|private| gekennzeichent, so ist ein Zugriff nur innerhalb
+ derselben Klasse möglich.
+ Es gibt (in Java) drei Sichtbarkeiten:
+ \begin{itemize}
+  \item public
+  \item protected
+  \item private
+ \end{itemize}
+\end{frame}
+
+\subsection{Packages}
+
+\section{Mehr Stoff im Wiki!}
+\subsection{Checkstyle}
+\begin{frame}{Checkstyle}
+ Insert interactive demonstration here
+\end{frame}
+\subsection{Eclipse}
+\begin{frame}{Eclipse}
+ Insert interactive demonstration here
+\end{frame}
+\section{Graphentheorie}
+\begin{frame}{Was ist ein Graph?}
+ Schwierige Frage.
+ \begin{itemize}
+  \item Eine Zeichnung mit Knoten und Kanten \pause
+  \item Eine Operation auf einer Menge. \pause
+  \item Eine Veranschaulichung einer Relation \pause
+  \item Was ist eine Relation?
+ \end{itemize}
+\end{frame}
+
+\subsection{Darstellung als Arrays}
+\begin{frame}{Graphen als Arrays}
+Kommt genauer im zweiten Semester. Hier dürft ihr das machen.
+Ihr benötigt zwei Arrays. Eine speichert, wie viele Kanten von einer
+Kante ausgehen. Die andere speichert die Ziele der Kanten.
+
+\textbf{Aufgabe:} Entwerfe eine Klasse Graph, die einen Graphen speichern
+kann. Die Knoten sollen hierbei von 0 durchnummeriert werden.
+\end{frame}
+
+\section{Matrizen}
+\begin{frame}{Matrizen}
+ Was ist eine Matrix? \pause
+ 
+ Grob ist eine Matrix eine Tabelle. 
+ Tabellen können als Arrays gespeichert werden. 
+ 
+ \pause
+ Verwende zweidimensionale Arrays!
+\end{frame}
+
+%%%% Ab hier muss nur noch das Bild gewechselt werden...
+\section{Fragen zum Übungsblatt?}
+\begin{frame}{Fragen?}
+\end{frame}
+
+
+
+%Lacher zum Schluss
+\begin{frame}
+ \includegraphics[scale=0.2]{../pics/11_waldo}
+ 
+ \tiny{Quelle: 9gag.com}
+\end{frame}
+
+
+\end{document}
