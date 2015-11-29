@@ -64,6 +64,54 @@ So weit also gut :)
 \end{frame}
 
 
+\section{Rückblick}
+\begin{frame}{Rückblick}
+ \begin{itemize}
+  \item Attribute
+  \item Variablen
+  \item Datentypen
+  \item Methoden
+  \item Kontrollstrukturen
+  \item Arrays
+  \item Checkstyle
+  \item Präzedenz
+  \item String
+  \item Referenzen
+ \end{itemize}
+\end{frame}
+
+\section{Heute + nächste Woche}
+\begin{frame}[fragile]{Ausblick}
+\begin{itemize}
+ \item Vererbung
+ \item Dynamische Bindung
+ \item Überschreibung von Attributen und Methoden
+ \item Konstruktoren mit \verb|super|
+ \item Typumwandlungen
+ \item Klasse \verb|Object| und Java-Klassenhierarchie
+ \item Abstrakte Klassen
+ \item Inhaltliche Gleichheit
+ \item \verb|final|
+ \item Javadoc
+ \item Verkette Listen und Iteratoren
+ \item Queue, Stack, Priority Queue
+ \item Schnittstellen
+ \item Generische Klassen und Schnittstellen
+  \item \verb|instanceof|
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Heute}
+\begin{itemize}
+ \item Vererbung
+ \item Überschreibung von Attributen und Methoden
+ \item Generische Klassen und Schnittstellen
+ \item Javadoc
+ \item Konstruktoren mit \verb|super|
+ \item Schnittstellen 
+\end{itemize}
+\end{frame}
+
 \section{Arrays} % 4-7
 
 
@@ -133,14 +181,6 @@ kann. Die Knoten sollen hierbei von 0 durchnummeriert werden.
 
  Verwende zweidimensionale Arrays!
 \end{frame}
-%%%% Ab hier muss nur noch das Bild gewechselt werden...
-\section{Fragen zum Übungsblatt?}
-\begin{frame}{Fragen?}
-\end{frame}
-
-
-
-
 
 
 \section{Packages}
@@ -235,75 +275,14 @@ it will become your single most important piece of reference documentation.}
 
 
 
-%title page
-\begin{frame}
-\titlepage
-\end{frame}
-
-%table of contents
-\begin{frame}{Gliederung}
-\tableofcontents
-\end{frame}
-\section{Rückblick}
-\begin{frame}{Rückblick}
- \begin{itemize}
-  \item Klassen
-  \item Objekte
-  \item Attribute
-  \item Variablen
-  \item Datentypen
-  \item Konstruktoren
-  \item Methoden
-  \item Kontrollstrukturen
-  \item Arrays
-  \item Checkstyle
-  \item Präzedenz
-  \item String
-  \item Referenzen
- \end{itemize}
-\end{frame}
-
-\section{Heute + nächste Woche}
-\begin{frame}[fragile]{Ausblick}
-\begin{itemize}
- \item Vererbung
- \item Dynamische Bindung
- \item Überschreibung von Attributen und Methoden
- \item Konstruktoren mit \verb|super|
- \item Typumwandlungen
- \item Klasse \verb|Object| und Java-Klassenhierarchie
- \item Abstrakte Klassen
- \item Inhaltliche Gleichheit
- \item \verb|final|
- \item Javadoc
- \item Verkette Listen und Iteratoren
- \item Queue, Stack, Priority Queue
- \item Schnittstellen
- \item Generische Klassen und Schnittstellen
-  \item \verb|instanceof|
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Heute}
-\begin{itemize}
- \item Vererbung
- \item Überschreibung von Attributen und Methoden
- \item Generische Klassen und Schnittstellen
- \item Javadoc
- \item Konstruktoren mit \verb|super|
- \item Schnittstellen 
-\end{itemize}
-\end{frame}
-
 \section{Vererbung}
 \subsection{Einführung}
 \begin{frame}{Vererbung}
- \includegraphics[scale=0.7]{07_AutoVererbung.png}
+ \includegraphics[scale=0.25]{Fahrzeuge.png}
  \begin{itemize}
  \item Ein PKW ist ein Fahrzeug, ein Zweirad ist ein Fahrzeug, 
   \item Eine Limousine ist ein Fahrzeug, aber nicht jedes Fahrzeug ist eine Limousine
   \item Jedes Cabrio kann das Dach öffnen bzw. schließen, bei PKWs macht das (meistens) keinen Sinn.
-  \item \ldots
  \end{itemize}
 \end{frame}
 
@@ -329,7 +308,7 @@ it will become your single most important piece of reference documentation.}
 
 \subsection{Aufgabe zur Vererbung}
 \begin{frame}{Übung!}
- \includegraphics[scale=0.7]{07_AutoVererbung.png}
+ \includegraphics[scale=0.25]{Fahrzeuge.png}
  \begin{itemize}
   \item Modelliere den Abschnitt PKW, Cabrio, Limousine, Coupé
   \item Füge sinnvolle Attribute in sinnvollen Klassen hinzu!
@@ -339,16 +318,6 @@ it will become your single most important piece of reference documentation.}
 
 \end{frame}
 
-\begin{frame}[fragile]{Heute}
-\begin{itemize}
- \item Vererbung \checkmark
- \item Überschreibung Methoden und Überlagerung von Attributen
- \item Generische Klassen und Schnittstellen
- \item Javadoc
- \item Konstruktoren mit \verb|super|
- \item Schnittstellen 
-\end{itemize}
-\end{frame}
 
 \section{Methoden und Methoden in Vererbung}
 \begin{frame}[fragile]{Überschreibung von Methoden}
@@ -404,17 +373,6 @@ public class SubBoaster extends SuperBoaster {
  \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{Heute}
-\begin{itemize}
- \item Vererbung \checkmark
- \item Überschreibung Methoden und Überlagerung von Attributen \checkmark
- \item Generische Klassen und Schnittstellen
- \item Javadoc
- \item Konstruktoren mit \verb|super|
-
- \item Schnittstellen 
-\end{itemize}
-\end{frame}
 
 \begin{frame}{Konstruktoren und super}
  \begin{alertblock}{Ein wichtiger Unterschied}
@@ -429,17 +387,6 @@ public class SubBoaster extends SuperBoaster {
   ArrayList<String> liste = new ArrayList<String>(); //oder...
   Liste liste = new ArrayList<String>();
  \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]{Heute}
-\begin{itemize}
- \item Vererbung \checkmark
- \item Überschreibung Methoden und Überlagerung von Attributen \checkmark
- \item Generische Klassen und Schnittstellen \checkmark
- \item Javadoc
- \item Konstruktoren mit \verb|super| \checkmark
- \item Schnittstellen
-\end{itemize}
 \end{frame}
 
 
@@ -475,27 +422,7 @@ Siehe dazu den Eintrag im Programmieren Wiki
 \verb|https://ilias.studium.kit.edu/goto.php?target=wiki_349162_Javadoc|
 \end{frame}
 
-\begin{frame}[fragile]{Heute}
-\begin{itemize}
- \item Vererbung \checkmark
- \item Überschreibung Methoden und Überlagerung von Attributen \checkmark
- \item Generische Klassen und Schnittstellen \checkmark
- \item Javadoc \checkmark
- \item Konstruktoren mit \verb|super| \checkmark
- \item Schnittstellen \checkmark
-\end{itemize}
-\end{frame}
 
-
-%title page
-\begin{frame}
-\titlepage
-\end{frame}
-
-%table of contents
-\begin{frame}{Gliederung}
-\tableofcontents
-\end{frame}
 \section{ToDo-Liste}
 \begin{frame}[fragile]{ToDo-Liste}
 \begin{itemize}
@@ -517,27 +444,6 @@ Siehe dazu den Eintrag im Programmieren Wiki
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Heute}
-\begin{itemize}
- \item Dynamische Bindung
- \item Typumwandlungen
- \item Klasse \verb|Object| und Java-Klassenhierarchie
- \item Abstrakte Klassen
- \item Inhaltliche Gleichheit
- \item \verb|final|
- \item Verkettete Listen und Iteratoren
- \item Queue, Stack, Priority Queue
- \item \verb|instanceof|
-\end{itemize}
-\end{frame}
-
-\section{Organisatorisches}
-\begin{frame}{Kein Tut am 23.12}
- \large FROHE WEIHNACHTEN!!!
- 
- \includegraphics[scale=0.5]{08_tree}
- \tiny: xkcd.com/835/
-\end{frame}
 
 
 \section{Stoff}
@@ -582,17 +488,6 @@ Room[name=null, size=0]
 
 \end{frame}
 
-\subsection{Typumwandlung}
-\begin{frame}[fragile]{Typumwandlungen}
- Gehen wir einmal die Tests durch:
- \verb|http://www.java-tutorial.org/typecasting.html|
-\end{frame}
-
-\begin{frame}{Widening and Narrowing Conversions}
- \includegraphics{08_narrowing}
- \includegraphics{08_widening}
-\end{frame}
-
 \subsection{Java-Object}
 \begin{frame}{Java: Object}
   \small
@@ -616,7 +511,7 @@ Room[name=null, size=0]
 
 \end{frame}
 \begin{frame}{Java-Klassenhierarchie}
- 
+ \url{http://docs.oracle.com/javase/7/docs/api/overview-tree.html}
 \end{frame}
 
 \begin{frame}[fragile]{Abstrakte Klassen}
@@ -678,7 +573,7 @@ Was ist der Unterschied einer abstrakten Klasse zu ``Interfaces``?
 \end{frame}
 
 \begin{frame}{Final}
-„Bis hierher darfst du und nicht weiter, hier muss sich legen deiner Wogen Stolz“. (Ijob 38,11)
+``Bis hierher darfst du und nicht weiter, hier muss sich legen deiner Wogen Stolz''. (Ijob 38,11)
   \pause
   
   \begin{itemize}
@@ -692,7 +587,6 @@ Was ist der Unterschied einer abstrakten Klasse zu ``Interfaces``?
  siehe IteratorTest.java
 \end{frame}
 
-\
 
 \begin{frame}[fragile]{Was noch?}
 \begin{itemize}
