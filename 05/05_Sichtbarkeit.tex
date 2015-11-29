@@ -1,0 +1,236 @@
+%% LaTeX-Beamer template for KIT design
+%% by Erik Burger, Christian Hammer
+%% title picture by Klaus Krogmann
+%%
+%% version 2.1
+%%
+%% mostly compatible to KIT corporate design v2.0
+%% http://intranet.kit.edu/gestaltungsrichtlinien.php
+%%
+%% Problems, bugs and comments to
+%% burger@kit.edu
+
+\documentclass[18pt]{beamer}
+%% SLIDE FORMAT
+\usepackage[utf8]{inputenc}
+\usepackage{algpseudocode}
+% use 'beamerthemekit' for standard 4:3 ratio
+% for widescreen slides (16:9), use 'beamerthemekitwide'
+
+\usepackage{templates/beamerthemekit}
+% \usepackage{templates/beamerthemekitwide}
+
+
+%% TikZ INTEGRATION
+
+% use these packages for PCM symbols and UML classes
+% \usepackage{templates/tikzkit}
+% \usepackage{templates/tikzuml}
+
+% the presentation starts here
+
+\title[Programmieren Tutorium]{5. Programmieren Tutorium:\texorpdfstring{\\}{} Warum Objektorientierung?}
+\subtitle{Sichtbarkeiten}
+\author{Konstantin Zangerle \texorpdfstring{\\}{} info@konstantinzangerle.de}
+\date{25. November}
+\institute{Chair for Software Design and Quality}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+  language=Java
+}
+\beamersetuncovermixins{\opaqueness<1>{0}}{\opaqueness<2->{0}} %Dont show things after pause 
+% Bibliography
+
+\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
+\addbibresource{templates/example.bib}
+\bibhang1em
+
+
+\begin{document}
+
+% change the following line to "ngerman" for German style date and logos
+\selectlanguage{ngerman}
+
+%title page
+\begin{frame}
+\titlepage
+\end{frame}
+
+%table of contents
+\begin{frame}{Gliederung}
+\tableofcontents
+\end{frame}
+
+\section{Organisatorisches} % 0-3
+\begin{frame}{Euer Tutorium – eure Wahl!}
+  \begin{itemize}
+   \item Jede Woche Tutorium
+   \item Nur alle zwei Wochen Aufgabenblätter
+   \item Möglichkeit 1: Ein Stoff-Tut, Ein Übe-Tut
+   \item Möglichkeit 2: Stoff verteilt auf zwei Tuts, Übungen zwischendurch
+  \end{itemize}
+\end{frame}
+
+\section{Arrays} % 4-7
+\begin{frame}[fragile]{Arrays}
+\begin{lstlisting}
+/* returns max {a,b,c,d} */
+public static int max4(int a, int b, int c, int d) { } 
+
+/* returns max {a,b,c,d,e} */
+public static int max5(int a, int b, int c, int d, int e) { } 
+
+
+/* any way to do this better? */
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Arrays}
+ \begin{lstlisting}
+    public static int max(int[] a) {
+        int max = Integer.MIN_VALUE;
+        for (int k : a) {
+            if (k >= max) {
+                max = k;
+            }
+        }
+        return max;
+    }
+ \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Arrays – Was muss man beachten}
+ \begin{itemize}
+  \item Arrays sollen Daten zusammenfassen, die zusammengehören
+  \item Auch wenns geht, so ein Array ist blöd [Handelsklasse, Gewicht, Volumen, Gewicht]
+  \item Eignen sich für feste Datengrößen (5x int; double-Feld 5x3; ...)
+ \end{itemize}
+
+\end{frame}
+
+
+\section{Typkonvertierung}
+\begin{frame}[fragile]{Typkonvertierung – funktioniert häufig}
+Bei Basisdatentypen den gewünschten Datentyp in Klammern schreiben.
+ \begin{lstlisting}
+  int a = (int) 5.3;
+  System.out.println(a);
+ \end{lstlisting}
+ \pause
+Java übernimmt das umwandeln. Manchmal muss man noch nichteinmal das machen.
+ \begin{lstlisting}
+  double a = 5;
+  System.out.println(a);
+ \end{lstlisting}
+\end{frame}
+
+\section{Datenkapselung}
+\begin{frame}{Datenkapselung}
+ Eines der grundlegenden Prinzipen der OOP.
+ Daten sollen dahin, wo sie hingehören (und nur da!).
+  Wenn möglich, geschieht dies nach dem \textbf{Geheimnisprinzip}. Jedes
+  Objekt, jede Klasse ändert nur die Dinge, die ihr auch selbst gehören.
+\end{frame}
+
+\subsection{Sichtbarkeit}
+\begin{frame}[fragile]{Sichtbarkeit}
+ Um Programmierer dazu zu zwingen, die Datenkapselung einzuhalten,
+ benutzen wir Sichtbarkeiten. Ist ein Attribut oder eine Methode als 
+ \verb|private| gekennzeichent, so ist ein Zugriff nur innerhalb
+ derselben Klasse möglich.
+ Es gibt (in Java) drei Sichtbarkeiten:
+ \begin{itemize}
+  \item public
+  \item protected
+  \item private
+ \end{itemize}
+\end{frame}
+
+\subsection{Packages}
+
+\section{Mehr Stoff im Wiki!}
+\subsection{Checkstyle}
+\begin{frame}{Checkstyle}
+ Insert interactive demonstration here
+\end{frame}
+\subsection{Eclipse}
+\begin{frame}{Eclipse}
+ Insert interactive demonstration here
+\end{frame}
+\section{Graphentheorie}
+\begin{frame}{Was ist ein Graph?}
+ Schwierige Frage.
+ \begin{itemize}
+  \item Eine Zeichnung mit Knoten und Kanten \pause
+  \item Eine Operation auf einer Menge. \pause
+  \item Eine Veranschaulichung einer Relation \pause
+  \item Was ist eine Relation?
+ \end{itemize}
+\end{frame}
+
+\subsection{Darstellung als Arrays}
+\begin{frame}{Graphen als Arrays}
+Kommt genauer im zweiten Semester. Hier dürft ihr das machen.
+Ihr benötigt zwei Arrays. Eine speichert, wie viele Kanten von einer
+Kante ausgehen. Die andere speichert die Ziele der Kanten.
+
+\textbf{Aufgabe:} Entwerfe eine Klasse Graph, die einen Graphen speichern
+kann. Die Knoten sollen hierbei von 0 durchnummeriert werden.
+\end{frame}
+
+\section{Matrizen}
+\begin{frame}{Matrizen}
+ Was ist eine Matrix? \pause
+ 
+ Grob ist eine Matrix eine Tabelle. 
+ Tabellen können als Arrays gespeichert werden. 
+ 
+ \pause
+ Verwende zweidimensionale Arrays!
+\end{frame}
+%%%% Ab hier muss nur noch das Bild gewechselt werden...
+\section{Fragen zum Übungsblatt?}
+\begin{frame}{Fragen?}
+\end{frame}
+
+
+
+%Lacher zum Schluss
+\begin{frame}
+ \includegraphics[scale=0.25]{05_afraidtodebug}
+ 
+ \tiny{Quelle: 9gag.com}
+\end{frame}
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%Bausteine
+%nice to have code
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%% Bausteine Folie mit Java-Code
+%\begin{frame}[fragile]{bla}
+%\begin{exampleblock}{bla}
+%\begin{lstlisting}[language=java]
+%\end{lstlisting}
+%\end{exampleblock}
+%\end{frame}

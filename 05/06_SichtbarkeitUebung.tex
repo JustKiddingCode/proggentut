@@ -1,0 +1,241 @@
+%% LaTeX-Beamer template for KIT design
+%% by Erik Burger, Christian Hammer
+%% title picture by Klaus Krogmann
+%%
+%% version 2.1
+%%
+%% mostly compatible to KIT corporate design v2.0
+%% http://intranet.kit.edu/gestaltungsrichtlinien.php
+%%
+%% Problems, bugs and comments to
+%% burger@kit.edu
+
+\documentclass[18pt]{beamer}
+%% SLIDE FORMAT
+\usepackage[utf8]{inputenc}
+\usepackage{algpseudocode}
+% use 'beamerthemekit' for standard 4:3 ratio
+% for widescreen slides (16:9), use 'beamerthemekitwide'
+
+\usepackage{templates/beamerthemekit}
+% \usepackage{templates/beamerthemekitwide}
+
+
+%% TikZ INTEGRATION
+
+% use these packages for PCM symbols and UML classes
+% \usepackage{templates/tikzkit}
+% \usepackage{templates/tikzuml}
+
+% the presentation starts here
+
+\title[Programmieren Tutorium]{5. Programmieren Tutorium:\texorpdfstring{\\}{} Warum Objektorientierung?}
+\subtitle{Sichtbarkeiten}
+\author{Konstantin Zangerle \texorpdfstring{\\}{} info@konstantinzangerle.de}
+\date{2. Dezember}
+\institute{Chair for Software Design and Quality}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false,
+  language=Java
+}
+\beamersetuncovermixins{\opaqueness<1>{0}}{\opaqueness<2->{0}} %Dont show things after pause 
+% Bibliography
+
+\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
+\addbibresource{templates/example.bib}
+\bibhang1em
+
+
+\begin{document}
+
+% change the following line to "ngerman" for German style date and logos
+\selectlanguage{ngerman}
+
+%title page
+\begin{frame}
+\titlepage
+\end{frame}
+
+%table of contents
+\begin{frame}{Gliederung}
+\tableofcontents
+\end{frame}
+\section{Übungsblatt}
+\subsection{Statistik}
+\begin{frame}{Statistik}
+\begin{itemize}
+ \item Teil A: 5.16666666667
+ \item Teil B: 5.47222222222 	
+ \item Teil C: 3.02777777778 	
+ \item Teil D: 1.95238095238 	
+ \item Ins: 15,06 (von 22 ungefähr 68\%) 
+\end{itemize}
+So weit also gut :)
+\end{frame}
+
+\subsection{Strings}
+\begin{frame}[fragile]{Strings}
+ \includegraphics[scale=0.5]{stringtime}
+ \begin{itemize}
+  \item Strings sind keine primitiven Datentypen
+  \item \verb|String test = "a";| test ist ein ``normales'' String-Objekt 
+  \item \verb|new String| zwingt Java dazu ein neues Objekt anzulegen, wird nicht ``wegoptimiert''
+ \end{itemize}
+\end{frame}
+
+\subsection{Bijektion}
+\begin{frame}{Bijektion}
+ War schwer.
+ 
+ \includegraphics[scale=0.5]{Dozent} \pause
+ 
+ Hat niemand.
+\end{frame}
+
+\begin{frame}[fragile]{Bijektion}
+ Was wurde erwartet? \pause
+ In einem der beiden Klassen sowas:
+ \begin{lstlisting}
+  public class Lecturer {
+    [...]
+    Lecture job;
+    
+    public Lecturer([...], Lecturer job) {
+      job.setLecturer(this);
+      [...]
+    }
+  }
+ \end{lstlisting}
+
+\end{frame}
+
+\section{Packages}
+\subsection{Definitionen}
+\begin{frame}{Packages}
+ Sind die Module in Java. \pause
+ 
+ \begin{exampleblock}{Definition: Modul}
+  Ein Modul (neutrum, das Modul[1]) ist eine abgeschlossene funktionale Einheit einer Software, 
+  bestehend aus einer Folge von Verarbeitungsschritten und Datenstrukturen. Inhalt eines Moduls ist
+  häufig eine wiederkehrende Berechnung oder Bearbeitung von Daten, die mehrfach durchgeführt 
+  werden muss. Das Modul führt eine Reihe von Verarbeitungsschritten durch, liefert bei der 
+  Rückkehr an das aufrufende Programm Daten als Ergebnis zurück.
+  
+  \tiny{Quelle: http://de.wikipedia.org/wiki/Modul\_\%28Software\%29 }
+ \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Packages}
+ Sind die Module in Java. \pause
+ 
+ \begin{exampleblock}{Definition: Modul (SWT)}
+ Ein Modul ist eine Menge von Programmelementen, die nach dem Geheimnisprinzip gemeinsam entworfen und geändert werden.
+
+ \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Packages}
+\tiny
+A package is a namespace that organizes a set of related classes and interfaces. 
+Conceptually you can think of packages as being similar to different folders on your computer. 
+You might keep HTML pages in one folder, images in another, and scripts or applications in yet another. 
+Because software written in the Java programming language can be composed of hundreds or thousands of 
+individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.
+
+The Java platform provides an enormous class library (a set of packages) suitable for use in your own 
+applications. This library is known as the ``Application Programming Interface'', or ``API'' for short. 
+Its packages represent the tasks most commonly associated with general-purpose programming. For example, 
+a String object contains state and behavior for character strings; a File object allows a programmer to easily 
+create, delete, inspect, compare, or modify a file on the filesystem; a Socket object allows for the creation
+and use of network sockets; various GUI objects control buttons and checkboxes and anything else related to 
+graphical user interfaces. There are literally thousands of classes to choose from. This allows you, the programmer, 
+to focus on the design of your particular application, rather than the infrastructure required to make it work.
+
+\emph{The Java Platform API Specification contains the complete listing for all packages, interfaces, classes, fields, 
+and methods supplied by the Java SE platform. Load the page in your browser and bookmark it. As a programmer, 
+it will become your single most important piece of reference documentation.}
+
+\end{frame}
+
+\begin{frame}{Packages}
+\scriptsize
+A package is a namespace that organizes a set of related classes and interfaces. 
+Conceptually you can think of packages as being similar to different folders on your computer. 
+You might keep HTML pages in one folder, images in another, and scripts or applications in yet another. 
+Because software written in the Java programming language can be composed of hundreds or thousands of 
+individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.
+
+The Java platform provides an enormous class library (a set of packages) suitable for use in your own 
+applications. This library is known as the ``Application Programming Interface'', or ``API'' for short. 
+Its packages represent the tasks most commonly associated with general-purpose programming. For example, 
+a String object contains state and behavior for character strings; a File object allows a programmer to easily 
+create, delete, inspect, compare, or modify a file on the filesystem; a Socket object allows for the creation
+and use of network sockets; various GUI objects control buttons and checkboxes and anything else related to 
+graphical user interfaces. There are literally thousands of classes to choose from. This allows you, the programmer, 
+to focus on the design of your particular application, rather than the infrastructure required to make it work.
+
+\emph{The Java Platform API Specification contains the complete listing for all packages, interfaces, classes, fields, 
+and methods supplied by the Java SE platform. Load the page in your browser and bookmark it. As a programmer, 
+it will become your single most important piece of reference documentation.}
+
+\end{frame}
+
+\begin{frame}{Packages}
+\begin{alertblock}{Wichtig}
+\Large
+\emph{The Java Platform API Specification contains the complete listing for all packages, interfaces, classes, fields, 
+and methods supplied by the Java SE platform. Load the page in your browser and bookmark it. As a programmer, 
+it will become your single most important piece of reference documentation.}
+ 
+\end{alertblock}
+
+\end{frame}
+
+%%%% Ab hier muss nur noch das Bild gewechselt werden...
+\section{Fragen zum Übungsblatt?}
+\begin{frame}{Fragen?}
+\end{frame}
+
+
+
+%Lacher zum Schluss
+\begin{frame}{Approximate?}
+ \includegraphics[scale=0.6]{06_approximate}
+ 
+ \tiny{Quelle: xkcd.com}
+\end{frame}
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%Bausteine
+%nice to have code
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sv
+
+%%%%% Bausteine Folie mit Java-Code
+%\begin{frame}[fragile]{bla}
+%\begin{exampleblock}{bla}
+%\begin{lstlisting}[language=java]
+%\end{lstlisting}
+%\end{exampleblock}
+%\end{frame}
