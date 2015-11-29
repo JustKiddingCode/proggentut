@@ -1,33 +1,9 @@
-%% LaTeX-Beamer template for KIT design
-%% by Erik Burger, Christian Hammer
-%% title picture by Klaus Krogmann
-%%
-%% version 2.1
-%%
-%% mostly compatible to KIT corporate design v2.0
-%% http://intranet.kit.edu/gestaltungsrichtlinien.php
-%%
-%% Problems, bugs and comments to
-%% burger@kit.edu
-
 \documentclass[18pt]{beamer}
 %% SLIDE FORMAT
 \usepackage[utf8]{inputenc}
 \usepackage{algpseudocode}
-% use 'beamerthemekit' for standard 4:3 ratio
-% for widescreen slides (16:9), use 'beamerthemekitwide'
-
-\usepackage{templates/beamerthemekit}
-% \usepackage{templates/beamerthemekitwide}
 
 
-%% TikZ INTEGRATION
-
-% use these packages for PCM symbols and UML classes
-% \usepackage{templates/tikzkit}
-% \usepackage{templates/tikzuml}
-
-% the presentation starts here
 
 \title[Programmieren Tutorium]{5. Programmieren Tutorium:\texorpdfstring{\\}{} Warum Objektorientierung?}
 \subtitle{Sichtbarkeiten}
@@ -57,11 +33,6 @@
 \beamersetuncovermixins{\opaqueness<1>{0}}{\opaqueness<2->{0}} %Dont show things after pause 
 % Bibliography
 
-\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
-\addbibresource{templates/example.bib}
-\bibhang1em
-
-
 \begin{document}
 
 % change the following line to "ngerman" for German style date and logos
@@ -77,29 +48,25 @@
 \tableofcontents
 \end{frame}
 
-\section{Organisatorisches} % 0-3
-\begin{frame}{Euer Tutorium – eure Wahl!}
-  \begin{itemize}
-   \item Jede Woche Tutorium
-   \item Nur alle zwei Wochen Aufgabenblätter
-   \item Möglichkeit 1: Ein Stoff-Tut, Ein Übe-Tut
-   \item Möglichkeit 2: Stoff verteilt auf zwei Tuts, Übungen zwischendurch
-  \end{itemize}
+\section{Übungsblatt}
+
+\subsection{Statistik}
+\begin{frame}{Statistik Übungsblatt 1}
+\begin{itemize}
+ \item Teil A: 1.45 vs 1,55 von 2 
+ \item Teil B: 1.77 vs 1,64 von 2 	
+ \item Teil C: 1,95 vs 1,70 von 2 	
+ \item Teil D: 5,95 vs 5,74 von 7	
+ \item Teil E: 2,77 vs 2,55 von 3
+ \item Teil F: 1,64 vs 1,66 von 2
+ \item Teil G: 1,9 vs 1,61 von 2
+\end{itemize}
+So weit also gut :)
 \end{frame}
+
 
 \section{Arrays} % 4-7
-\begin{frame}[fragile]{Arrays}
-\begin{lstlisting}
-/* returns max {a,b,c,d} */
-public static int max4(int a, int b, int c, int d) { } 
 
-/* returns max {a,b,c,d,e} */
-public static int max5(int a, int b, int c, int d, int e) { } 
-
-
-/* any way to do this better? */
-\end{lstlisting}
-\end{frame}
 
 \begin{frame}[fragile]{Arrays}
  \begin{lstlisting}
@@ -124,30 +91,6 @@ public static int max5(int a, int b, int c, int d, int e) { }
 
 \end{frame}
 
-
-\section{Typkonvertierung}
-\begin{frame}[fragile]{Typkonvertierung – funktioniert häufig}
-Bei Basisdatentypen den gewünschten Datentyp in Klammern schreiben.
- \begin{lstlisting}
-  int a = (int) 5.3;
-  System.out.println(a);
- \end{lstlisting}
- \pause
-Java übernimmt das umwandeln. Manchmal muss man noch nichteinmal das machen.
- \begin{lstlisting}
-  double a = 5;
-  System.out.println(a);
- \end{lstlisting}
-\end{frame}
-
-\section{Datenkapselung}
-\begin{frame}{Datenkapselung}
- Eines der grundlegenden Prinzipen der OOP.
- Daten sollen dahin, wo sie hingehören (und nur da!).
-  Wenn möglich, geschieht dies nach dem \textbf{Geheimnisprinzip}. Jedes
-  Objekt, jede Klasse ändert nur die Dinge, die ihr auch selbst gehören.
-\end{frame}
-
 \subsection{Sichtbarkeit}
 \begin{frame}[fragile]{Sichtbarkeit}
  Um Programmierer dazu zu zwingen, die Datenkapselung einzuhalten,
@@ -163,24 +106,13 @@ Java übernimmt das umwandeln. Manchmal muss man noch nichteinmal das machen.
 \end{frame}
 
 \subsection{Packages}
-
-\section{Mehr Stoff im Wiki!}
-\subsection{Checkstyle}
-\begin{frame}{Checkstyle}
- Insert interactive demonstration here
-\end{frame}
-\subsection{Eclipse}
-\begin{frame}{Eclipse}
- Insert interactive demonstration here
-\end{frame}
 \section{Graphentheorie}
 \begin{frame}{Was ist ein Graph?}
  Schwierige Frage.
  \begin{itemize}
-  \item Eine Zeichnung mit Knoten und Kanten \pause
-  \item Eine Operation auf einer Menge. \pause
-  \item Eine Veranschaulichung einer Relation \pause
-  \item Was ist eine Relation?
+  \item Eine Zeichnung mit Knoten und Kanten 
+  \item Eine Operation auf einer Menge. 
+  \item Eine Veranschaulichung einer Relation 
  \end{itemize}
 \end{frame}
 
@@ -196,12 +128,10 @@ kann. Die Knoten sollen hierbei von 0 durchnummeriert werden.
 
 \section{Matrizen}
 \begin{frame}{Matrizen}
- Was ist eine Matrix? \pause
- 
+ Was ist eine Matrix?
  Grob ist eine Matrix eine Tabelle. 
  Tabellen können als Arrays gespeichert werden. 
- 
- \pause
+
  Verwende zweidimensionale Arrays!
 \end{frame}
 %%%% Ab hier muss nur noch das Bild gewechselt werden...
@@ -211,9 +141,96 @@ kann. Die Knoten sollen hierbei von 0 durchnummeriert werden.
 
 
 
+
+
+
+\section{Packages}
+\subsection{Definitionen}
+\begin{frame}{Packages}
+ Sind die Module in Java. \pause
+ 
+ \begin{exampleblock}{Definition: Modul}
+  Ein Modul (neutrum, das Modul[1]) ist eine abgeschlossene funktionale Einheit einer Software, 
+  bestehend aus einer Folge von Verarbeitungsschritten und Datenstrukturen. Inhalt eines Moduls ist
+  häufig eine wiederkehrende Berechnung oder Bearbeitung von Daten, die mehrfach durchgeführt 
+  werden muss. Das Modul führt eine Reihe von Verarbeitungsschritten durch, liefert bei der 
+  Rückkehr an das aufrufende Programm Daten als Ergebnis zurück.
+  
+  \tiny{Quelle: http://de.wikipedia.org/wiki/Modul\_\%28Software\%29 }
+ \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Packages}
+ Sind die Module in Java. \pause
+ 
+ \begin{exampleblock}{Definition: Modul (SWT)}
+ Ein Modul ist eine Menge von Programmelementen, die nach dem Geheimnisprinzip gemeinsam entworfen und geändert werden.
+
+ \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Packages}
+\tiny
+A package is a namespace that organizes a set of related classes and interfaces. 
+Conceptually you can think of packages as being similar to different folders on your computer. 
+You might keep HTML pages in one folder, images in another, and scripts or applications in yet another. 
+Because software written in the Java programming language can be composed of hundreds or thousands of 
+individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.
+
+The Java platform provides an enormous class library (a set of packages) suitable for use in your own 
+applications. This library is known as the ``Application Programming Interface'', or ``API'' for short. 
+Its packages represent the tasks most commonly associated with general-purpose programming. For example, 
+a String object contains state and behavior for character strings; a File object allows a programmer to easily 
+create, delete, inspect, compare, or modify a file on the filesystem; a Socket object allows for the creation
+and use of network sockets; various GUI objects control buttons and checkboxes and anything else related to 
+graphical user interfaces. There are literally thousands of classes to choose from. This allows you, the programmer, 
+to focus on the design of your particular application, rather than the infrastructure required to make it work.
+
+\emph{The Java Platform API Specification contains the complete listing for all packages, interfaces, classes, fields, 
+and methods supplied by the Java SE platform. Load the page in your browser and bookmark it. As a programmer, 
+it will become your single most important piece of reference documentation.}
+
+\end{frame}
+
+\begin{frame}{Packages}
+\scriptsize
+A package is a namespace that organizes a set of related classes and interfaces. 
+Conceptually you can think of packages as being similar to different folders on your computer. 
+You might keep HTML pages in one folder, images in another, and scripts or applications in yet another. 
+Because software written in the Java programming language can be composed of hundreds or thousands of 
+individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.
+
+The Java platform provides an enormous class library (a set of packages) suitable for use in your own 
+applications. This library is known as the ``Application Programming Interface'', or ``API'' for short. 
+Its packages represent the tasks most commonly associated with general-purpose programming. For example, 
+a String object contains state and behavior for character strings; a File object allows a programmer to easily 
+create, delete, inspect, compare, or modify a file on the filesystem; a Socket object allows for the creation
+and use of network sockets; various GUI objects control buttons and checkboxes and anything else related to 
+graphical user interfaces. There are literally thousands of classes to choose from. This allows you, the programmer, 
+to focus on the design of your particular application, rather than the infrastructure required to make it work.
+
+\emph{The Java Platform API Specification contains the complete listing for all packages, interfaces, classes, fields, 
+and methods supplied by the Java SE platform. Load the page in your browser and bookmark it. As a programmer, 
+it will become your single most important piece of reference documentation.}
+
+\end{frame}
+
+\begin{frame}{Packages}
+\begin{alertblock}{Wichtig}
+\Large
+\emph{The Java Platform API Specification contains the complete listing for all packages, interfaces, classes, fields, 
+and methods supplied by the Java SE platform. Load the page in your browser and bookmark it. As a programmer, 
+it will become your single most important piece of reference documentation.}
+ 
+\end{alertblock}
+
+\end{frame}
+
 %Lacher zum Schluss
 \begin{frame}
- \includegraphics[scale=0.25]{05_afraidtodebug}
+ %\includegraphics[scale=0.25]{05_afraidtodebug}
  
  \tiny{Quelle: 9gag.com}
 \end{frame}
