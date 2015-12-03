@@ -35,7 +35,6 @@
 \begin{document}
 
 % change the following line to "ngerman" for German style date and logos
-\selectlanguage{ngerman}
 
 %title page
 \begin{frame}
@@ -340,31 +339,6 @@ public class DieselMotor extends Motor {
  \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Überschatten von Attributen}
- \begin{lstlisting}
-  class SuperBoaster {
-  int nr = 1;
-  void boast()  {
-    System.out.println( "Ich bin die Nummber " + nr );
-  }
-}
-public class SubBoaster extends SuperBoaster {
-  int nr = 2;
-  @Override 
-  void boast()  {
-    super.boast();                   // Ich bin die Nummber 1
-    System.out.println( super.nr );  // 1
-    System.out.println( nr );        // 2
-  }
-
-  public static void main( String[] args )  {
-    new SubBoaster().boast();
-  }
-} //Geklaut von: Java ist auch eine Insel 5.11.5
- \end{lstlisting}
-\end{frame}
-
-
 \begin{frame}{Konstruktoren und super}
  \begin{alertblock}{Ein wichtiger Unterschied}
   In Konstruktoren muss der super() Konstruktor als erstes aufgerufen werden,
@@ -592,21 +566,6 @@ Was ist der Unterschied einer abstrakten Klasse zu ``Interfaces``?
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Queue, Stack, Priority Queue}
- 
-\end{frame}
-
-\begin{frame}{instanceof}
- 
-\end{frame}
-
-
-%Lacher zum Schluss
-\begin{frame}
- %\includegraphics[scale=0.25]{05_afraidtodebug}
- 
- \tiny{Quelle: 9gag.com}
-\end{frame}
 
 
 \end{document}
