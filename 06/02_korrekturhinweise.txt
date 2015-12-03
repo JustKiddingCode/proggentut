@@ -1,0 +1,12 @@
+Global:
+2P Abzug pro Aufgabe für nicht-englischsprachigen Code
+0,5 – 1.5 Formatierung
+Klassennamen groß 1P
+
+====
+=A==
+====
+
+if (n % 2 == 0)
+Falscher Wertebereich -0.5
+Seperate Methoden -2p
