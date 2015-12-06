@@ -61,29 +61,71 @@
 
 \end{frame}
 
+\section{Listen}
+\begin{frame}[fragile]{Code Review}
+ \begin{lstlisting}
+  static void uneven(int n1, int n2) {
+        int n;
+        for (int i = n1; i <= n2; i++) {
+            
+            while ((i % 2) != 0) {
+                System.out.print(i + " ");
+                break;
 
-\section{Übungsblatt}
+            }
+        }
+    }
+ \end{lstlisting}
+\end{frame}
 
-\subsection{Statistik}
-\begin{frame}{Statistik Übungsblatt 1}
-\begin{itemize}
- \item Teil A: 1.45 vs 1,55 von 2 
- \item Teil B: 1.77 vs 1,64 von 2 	
- \item Teil C: 1,95 vs 1,70 von 2 	
- \item Teil D: 5,95 vs 5,74 von 7	
- \item Teil E: 2,77 vs 2,55 von 3
- \item Teil F: 1,64 vs 1,66 von 2
- \item Teil G: 1,9 vs 1,61 von 2
-\end{itemize}
-So weit also gut :)
+\begin{frame}[fragile]{Code Review}
+ \begin{lstlisting}
+ public static void numbersequence(int lowerBound, int upperBound) {
+        int count = lowerBound;
+
+        if (count % 2 == 0) {
+            count++;
+        }
+
+        if (upperBound % 2 == 0) {
+            upperBound -= 1;
+        }
+
+        for (; count <= upperBound; count += 2) {
+            System.out.print((count != upperBound) ? count + " " : count);
+        }
+
+        System.out.println("");
+    }
+
+
+ \end{lstlisting}
 \end{frame}
 
 
-\section{Listen}
+\begin{frame}[fragile]{Code Review}
+ \begin{lstlisting}
+ if( (number&1) == 0){
+            System.out.printf("number %d is even number %n" , number);
+        }else{
+            System.out.printf("number %d is odd number %n", number);
+        }
+ \end{lstlisting}
+\end{frame}
 
 \subsection{Iterator}
+\begin{frame}[fragile]{Iterator}
+\begin{lstlisting}
+ List<String> list = new ArrayList<String>();
+list.add("Ente");
+list.add("Schinken");
+list.add("Truthahn");
+ 
+for(String name: list) System.out.println(name);
+\end{lstlisting}
+ 
+\end{frame}
 
-\subsection{Vgl. Array und Listen}
 
 
 
@@ -216,8 +258,8 @@ Siehe dazu den Eintrag im Programmieren Wiki
   \item wait()
   \item wait(long timeout)
   \item wait(long timeout, int nanos)
- \end{itemize} \pause
- Aber warum? \pause \\
+ \end{itemize}
+ Aber warum? \\
  \large Antwort: Vererbung
  
 
@@ -229,13 +271,13 @@ Siehe dazu den Eintrag im Programmieren Wiki
     public abstract class AbstracterSchinken {
       public String name;
     }
- \end{lstlisting} \pause
+ \end{lstlisting} 
  Natürlich gilt das auch für Methoden
  \begin{lstlisting}
     public abstract class AbstrakterSchinken {
       public abstract void Abschneiden();
     }
- \end{lstlisting} \pause
+ \end{lstlisting} 
 Was ist der Unterschied einer abstrakten Klasse zu ``Interfaces``?
 \end{frame}
 
@@ -248,7 +290,7 @@ Was ist der Unterschied einer abstrakten Klasse zu ``Interfaces``?
  \end{itemize}
 \end{frame}
 \begin{frame}[fragile]{Prüfen auf ''Inhaltliche Gleichheit''}
- Mittels überschreiben der \verb|equals|-Methode. Alles klar? \pause
+ Mittels überschreiben der \verb|equals|-Methode. Alles klar? 
  Was gibt es zu beachten?:
  Equals muss erfüllen
  \begin{enumerate}
@@ -291,17 +333,59 @@ Was ist der Unterschied einer abstrakten Klasse zu ``Interfaces``?
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Verkettete Listen und Iteratoren}
- siehe IteratorTest.java
+\begin{frame}[fragile]{Verkettete Listen und Iteratoren}
+\begin{lstlisting}[language=java]
+    public static void main(String[] args) {
+        TreeSet<String> set = new TreeSet<String>();
+        for (int i = 0; i < 20; i++) {
+            set.add(new Integer(i).toString());
+        }
+        for (Iterator<String> it = set.iterator(); it.hasNext();) {
+            String s = it.next();
+            if (s.equals("15"))
+                it.remove();
+            System.out.println(s); // "15" noch enthalten
+        }
+        Iterator<String> iter = set.iterator();
+        while (iter.hasNext()) {
+            String s = iter.next();
+            // if(s.equals("15")) set.remove(s); // ConcurrentModificationException
+            iter.remove();
+            System.out.println(s); // "15" entfernt
+        }
+    }
+\end{lstlisting}
+
 \end{frame}
 
 
 \begin{frame}{Queue, Stack, Priority Queue}
+\begin{itemize}
+ \item Priority Queue \url{http://stackoverflow.com/questions/683041/java-how-do-i-use-a-priorityqueue}
+ \item Stack \url{http://www.java-tutorial.org/stack.html}
+\end{itemize}
+
  
 \end{frame}
 
-\begin{frame}{instanceof}
- 
+\begin{frame}[fragile]{instanceof}
+ \begin{lstlisting}
+class Parent {  }
+class Child extends Parent {   }
+
+public class Main {
+  public static void main(String[] args) {
+
+    Child child = new Child();
+    if (child instanceof Parent) {
+      System.out.println("passt");
+    }
+
+  }
+
+}
+ \end{lstlisting}
+
 \end{frame}
 
 

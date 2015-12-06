@@ -13,3 +13,8 @@ if (n % 2 == 0)
 Falscher Wertebereich -0.5
 Seperate Methoden -2p
 Zwei Schleifen in Sequence of Numbers -1p
+
+
+====
+=B==
+====
