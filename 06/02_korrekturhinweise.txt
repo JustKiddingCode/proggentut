@@ -1,5 +1,7 @@
 Global:
-2P Abzug pro Aufgabe für nicht-englischsprachigen Code
+2P Abzug pro Aufgabe für nicht-englischsprachigen Code A - Teil
+1P ab Teil B
+
 0,5 – 1.5 Formatierung
 Klassennamen groß 1P
 Unnötige Ausgaben: 1P
@@ -18,3 +20,12 @@ Zwei Schleifen in Sequence of Numbers -1p
 ====
 =B==
 ====
+
+Obere Grenze falsch (< in for statt <=) -0.5
+Untere Grenze ist falsch (das kann man sehen) -1
+Sonderfall i == 0 nicht ausgelagert sondern in Schleife -1p
+Falkultätsberechnung ist falsch -1p
+While statt for Schleife -0.5p
+Variablenbennenung -0.5p
+Keine Eingabe per Kommandozeile -1p
+E erst nach Schleife += 1 (in Ausgabe) -0.5p
