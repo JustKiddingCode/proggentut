@@ -29,3 +29,7 @@ While statt for Schleife -0.5p
 Variablenbennenung -0.5p
 Keine Eingabe per Kommandozeile -1p
 E erst nach Schleife += 1 (in Ausgabe) -0.5p
+
+====
+=C==
+====
