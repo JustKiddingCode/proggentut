@@ -166,29 +166,6 @@ public class DieselMotor extends Motor {
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{Überschatten von Attributen}
- \begin{lstlisting}
-  class SuperBoaster {
-  int nr = 1;
-  void boast()  {
-    System.out.println( "Ich bin die Nummber " + nr );
-  }
-}
-public class SubBoaster extends SuperBoaster {
-  int nr = 2;
-  @Override 
-  void boast()  {
-    super.boast();                   // Ich bin die Nummber 1
-    System.out.println( super.nr );  // 1
-    System.out.println( nr );        // 2
-  }
-
-  public static void main( String[] args )  {
-    new SubBoaster().boast();
-  }
-} //Geklaut von: Java ist auch eine Insel 5.11.5
- \end{lstlisting}
-\end{frame}
 
 
 \begin{frame}{Konstruktoren und super}
