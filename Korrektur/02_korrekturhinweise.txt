@@ -1,6 +1,6 @@
 Global:
 2P Abzug pro Aufgabe für nicht-englischsprachigen Code A - Teil
-1P ab Teil B
+1P Abzug für nicht-englischsprachigen Code
 
 0,5 – 1.5 Formatierung
 Klassennamen groß 1P
@@ -33,3 +33,7 @@ E erst nach Schleife += 1 (in Ausgabe) -0.5p
 ====
 =C==
 ====
+
+Falsche Ausgabe -1P
+While statt for Schleife -0.5p
+kein % benutzt -0.5p
