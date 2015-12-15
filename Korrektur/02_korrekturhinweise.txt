@@ -5,7 +5,7 @@ Global:
 0,5 – 1.5 Formatierung
 Klassennamen groß 1P
 Unnötige Ausgaben: 1P
-
+if (true == true)
 
 ====
 =A==
@@ -37,3 +37,10 @@ E erst nach Schleife += 1 (in Ausgabe) -0.5p
 Falsche Ausgabe -1P
 While statt for Schleife -0.5p
 kein % benutzt -0.5p
+Keine Eingabe per Konsole!!!! -1.5p
+if (a) else if (!a) -0.5p
+If benutzt / kein oder falscher Default value -0.5p
+
+====
+=D==
+====
