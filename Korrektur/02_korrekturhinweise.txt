@@ -44,3 +44,11 @@ If benutzt / kein oder falscher Default value -0.5p
 ====
 =D==
 ====
+
+
+
+====
+=E==
+====
+
+Benutzen von Math.pow ist ineffizient, für nat. Zahlen x*x.. verwenden-1p
