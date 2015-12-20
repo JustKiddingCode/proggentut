@@ -1,0 +1,39 @@
+@startuml
+enum Player {
+  Player1(0, 'x')
+  Player2(1, 'o')
+
+  int number
+  char Symbol
+  toString()
+}
+class Result {
+  int round
+  Player player
+
+  Result(int round, Player player)
+  toString()
+}
+class Main {
+  main()
+}
+class Field {
+  final int WIDTH = 3
+  final int HEIGHT = 3
+  final int SIZE = WIDTH * HEIGHT
+  final int WIN_ROW_COUNT = min WIDTH, HEIGHT
+
+  boolean playersMove(int n)
+  boolean checkWinMove(int n)
+  int rowCount(xPos, yPos, dx, dy)
+  Player getActivePlayer()
+  void nextPlayer()
+  String toString()
+  String fieldToString()
+}
+Field -> Player
+Main -> Field
+Result -> Player
+Field -> Result
+
+@enduml 
