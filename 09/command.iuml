@@ -1,9 +1,16 @@
 @startuml;
-interface command {
+interface Command {
   void do(operierendeKlasse);
   void undo;
   void redo;
 }
 
+
+SchinkenBraten --|> Command
+
+
+class Koch {
+    List<Command> Commands;
+}
 
 @enduml;
