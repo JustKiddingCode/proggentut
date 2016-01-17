@@ -5,7 +5,7 @@
 \usepackage{algpseudocode}
 \usepackage{multicol}
 
-\title[Programmieren Tutorium]{9. Programmieren Tutorium:\texorpdfstring{\\}{} Exceptions}
+\title[Programmieren Tutorium]{9. Programmieren Tutorium:\texorpdfstring{\\}{} Handwerk erlernt, Wissenschaft beginnt}
 %\subtitle{Fancy Stuff}
 \author{Konstantin Zangerle \texorpdfstring{\\}{} info@konstantinzangerle.de}
 \date{18. Jan 2016}
@@ -69,12 +69,50 @@
   Herzlichen Glückwunsch an alle, die jetzt mehr als 60 Punkte haben.
 \end{frame}
 
+\begin{frame}{Mögliche Klassen}
+ \begin{itemize}
+  \item Command (als Interface)
+  \item DirectionC, FieldC, MoveC, PositionC, PrintC
+  \item Field (abstract)
+  \item StandardField, TorusField
+  \item Ant
+  \item FieldColor, FieldType
+  \item IO
+  \item \dots
+ \end{itemize}
+
+\end{frame}
+
 
 \section{Command}
 
 \begin{frame}{Command}
  \includegraphics[scale=0.6]{command}
 \end{frame}
+
+\begin{frame}{Wie entwerfe ich gut?}
+\pause
+ \begin{itemize}
+  \item Mit Stift und Papier
+  \item Drauflos und dann überdenken
+  \item Keine Scheu haben alles zu ändern
+  \item Reinschrift (z.B. mit plantuml)
+  \item Falls beim Programmieren, was nicht passt, überdenken!
+ \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Wichtige Fragen}
+ \begin{itemize}
+  \item Hat die Klasse einen klar definierten Zweck?
+  \item Ähneln sich zwei Klassen stark (Vererbung, Interface)?
+  \item Haben meine Funktionen genau eine Aufgabe
+  \item Codeduplizierungen vermeiden!
+ \end{itemize}
+
+\end{frame}
+
 
 \begin{section}{Assertions} 
 \begin{frame}[fragile]{Assertions}
@@ -140,17 +178,11 @@ Wichtige Regeln:
 \begin{section}{Was noch} 
 \begin{frame}{Was noch?}
 \begin{itemize}
+ \item Nested Classes \url{https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html}
  \item Debugging mit Eclipse
- \item Sortierverfahren
 \end{itemize}
  
 \end{frame}
 \end{section}
 
-
-
-\begin{frame}{Frohe Weihnachten}
- 
- Quelle: http://xkcd.com/835
-\end{frame}
 \end{document}
