@@ -4,6 +4,8 @@ import org.junit.Test;
 
 
 public class UtilityClassTest {
+        UtilityClass x;
+
 	@Test
 	public void test() {
 		assertEquals(UtilityClass.fib(0), 0);

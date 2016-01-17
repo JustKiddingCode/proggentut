@@ -76,6 +76,78 @@
  \includegraphics[scale=0.6]{command}
 \end{frame}
 
+\begin{section}{Assertions} 
+\begin{frame}[fragile]{Assertions}
+ \pause
+ \begin{itemize}
+  \item Müssen über das Compilerflac \verb|-ea| aktiviert werden
+  \item Verwenden, wenn irgendwas kaputt ist, falls Assertion nicht erfüllt:
+  \begin{itemize}
+   \item Nicht als Eingabevalidierung
+   \item Gut als Schleifeninvarianten
+   \item Vor- Nachbedingung
+   \item bei privaten Methoden
+  \end{itemize}
+ \end{itemize}
+
+\end{frame}
+\end{section}
+
+
+\begin{section}{Unit Tests} 
+
+\begin{frame}{Unit Tests}
+\pause
+\begin{itemize}
+ \item Über JUnit.
+ \item Am besten für alle public-Methoden
+ \item Möglichkeiten: \begin{itemize}
+        \item Überprüfen ob Exception geworfen wird
+        \item AssertEquals
+        \item AssertTrue /- False
+        \item Up and Down Methoden für jeden Testfall und einmalig
+       \end{itemize}
+\end{itemize}
+\end{frame}
+\end{section}
+
+
+\begin{section}{Exceptions} 
+\begin{frame}[fragile]{Exceptions}
+Ausnahmefälle, die behandelt werden können.
+Wichtige Regeln:
+\begin{itemize}
+ \item Kein \verb|catch Exception e|
+ \item Niemals auf Throwable oder Error catchen!
+ \item Eigene Exceptions erben von Exception
+ \item Throws Deklaration zusammen mit Javadoc verwenden
+\end{itemize}
+
+\end{frame}
+\end{section}
+
+
+
+\begin{section}{Generics} 
+\begin{frame}[fragile]{Generics}
+ Um Schreibarbeit zu ersparen.
+ Oder ist ArrayListInt, ArrayListDouble, ArrayListString, usw schöner als \verb|ArrayList<T>| ?
+\end{frame}
+\end{section}
+
+
+
+\begin{section}{Was noch} 
+\begin{frame}{Was noch?}
+\begin{itemize}
+ \item Debugging mit Eclipse
+ \item Sortierverfahren
+\end{itemize}
+ 
+\end{frame}
+\end{section}
+
+
 
 \begin{frame}{Frohe Weihnachten}
  

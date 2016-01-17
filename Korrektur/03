@@ -7,3 +7,20 @@ Pro Test 0.5p
 Ausgabe komplett falsch -> 50%
 Checkstyle -1p
 Sonstige Formatierung 0.5p
+
+===
+=B=
+===
+
+
+plus bereich:
+6 tests -> 3 Punkte (max 4)
+edges matrix / parsen der datei 1 Punkt (max1)
+objektorientierte modellierung 0p (max 1)
+checkstyle (0p) (max 1)
+---
+
+negativ:
+formatierung -1p (0..1)
+---
+3 Punkte
