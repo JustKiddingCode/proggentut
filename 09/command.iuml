@@ -1,0 +1,9 @@
+@startuml;
+interface command {
+  void do(operierendeKlasse);
+  void undo;
+  void redo;
+}
+
+
+@enduml;
