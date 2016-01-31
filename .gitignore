@@ -10,3 +10,5 @@
 *.pdf
 *.pdfpc
 *.dvi
+/11/SimpleParser/nbproject/private/
+/11/SimpleParser/build/
